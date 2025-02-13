@@ -26,6 +26,7 @@ class RequestResult:
         self.stop_reason: Optional[str] = None
         self.error_code: Optional[int] = None
         self.error_text: Optional[str] = None
+        self.itls: Optional[list[float]] = None
 
     def asdict(self):
         """Return a dictionary."""

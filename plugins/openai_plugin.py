@@ -366,5 +366,7 @@ class OpenAIPlugin(plugin.Plugin):
         if expected_output_tokens and result.output_tokens != expected_output_tokens:
             logger.warning(f"Received {result.output_tokens} tokens but expected {expected_output_tokens} tokens")
 
+        result.itls = [token['lat'] / token['count'] for token in tokens for _ in range(token["count"])]
+
         result.calculate_results()
         return result
